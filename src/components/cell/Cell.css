@@ -3,3 +3,9 @@
   height: 19px;
   border: 1px solid grey;
 }
+.notSelected {
+  background-color: white;
+}
+.selected {
+  background-color: pink;
+}
