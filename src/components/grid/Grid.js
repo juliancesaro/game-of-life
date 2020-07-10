@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import "./Grid.css";
-import Cell from "../cell/Cell";
+import React from "react"
+import "./Grid.css"
+import Cell from "../cell/Cell"
 
 const Grid = ({ grid, setGrid, numRows, numCols, isActive }) => {
   return (
@@ -25,7 +25,7 @@ const Grid = ({ grid, setGrid, numRows, numCols, isActive }) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Grid;
+export default Grid
