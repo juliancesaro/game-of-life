@@ -1,21 +1,8 @@
-import React from "react";
-import "./Cell.css";
-import produce from "immer";
+import React from "react"
+import "./Cell.css"
 
-const Cell = ({ row, col, grid, setGrid }) => {
-  const toggleSelect = () => {
-    const newGrid = produce(grid, (gridCopy) => {
-      gridCopy[row][col] = 1;
-    });
-    setGrid(newGrid);
-  };
+const Cell = () => {
+  return <div className="cell"></div>
+}
 
-  return (
-    <div
-      className={`cell ${grid[row][col] ? "selected" : "notSelected"}`}
-      onClick={toggleSelect}
-    ></div>
-  );
-};
-
-export default Cell;
+export default Cell
