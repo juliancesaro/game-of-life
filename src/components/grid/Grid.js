@@ -1,6 +1,6 @@
-import React from "react"
-import "./Grid.css"
-import Cell from "../cell/Cell"
+import React, { useState } from "react";
+import "./Grid.css";
+import Cell from "../cell/Cell";
 
 const Grid = ({ cols, rows }) => {
   return (
@@ -13,7 +13,7 @@ const Grid = ({ cols, rows }) => {
     >
       {cols.map((col, i) => rows.map((row, k) => <Cell key={`${i}-${k}`} />))}
     </div>
-  )
-}
+  );
+};
 
-export default Grid
+export default Grid;
