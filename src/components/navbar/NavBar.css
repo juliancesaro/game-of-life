@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: grey;
+}
+.input-fields {
+  display: flex;
+}
+form {
+  display: flex;
+  align-items: center;
+}
+button {
+  margin: 5px;
+  height: 30px;
+}

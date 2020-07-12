@@ -1,8 +1,16 @@
-import React, { useState } from "react"
+import React from "react"
 import "./Grid.css"
+import produce from "immer"
 import Cell from "../cell/Cell"
 
 const Grid = ({ grid, setGrid, numRows, numCols, isActive }) => {
+  const activateCell = (row, col) => {
+    setGrid(
+      produce(grid, (gridCopy) => {
+        gridCopy[row][col] = !gridCopy[row][col]
+      })
+    )
+  }
   return (
     <div className="grid-wrapper">
       <div
@@ -16,10 +24,10 @@ const Grid = ({ grid, setGrid, numRows, numCols, isActive }) => {
           rows.map((col, k) => (
             <Cell
               key={`${i}-${k}`}
-              row={k}
-              col={i}
-              grid={grid}
-              setGrid={setGrid}
+              row={i}
+              col={k}
+              isActive={grid[i][k]}
+              activate={activateCell}
             />
           ))
         )}
