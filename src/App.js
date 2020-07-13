@@ -16,6 +16,14 @@ const operations = [
 ]
 
 const App = () => {
+  const [speedVal, setSpeedVal] = useState(100)
+  const [numRows, setNumRows] = useState(10)
+  const [numCols, setNumCols] = useState(10)
+  const [gridActive, setGridActive] = useState(false)
+
+  console.log(numRows)
+  console.log(numCols)
+
   const emptyGrid = () => {
     const rows = []
     for (let i = 0; i < numRows; i++) {
@@ -24,10 +32,6 @@ const App = () => {
     return rows
   }
 
-  const [speedVal, setSpeedVal] = useState(100)
-  const [numRows, setNumRows] = useState(10)
-  const [numCols, setNumCols] = useState(10)
-  const [gridActive, setGridActive] = useState(false)
   const [grid, setGrid] = useState(() => {
     return emptyGrid()
   })

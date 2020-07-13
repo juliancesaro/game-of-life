@@ -14,7 +14,12 @@ const NavBar = ({
   handleRowsChange,
   numCols,
   handleColsChange,
+  gridSizeChange,
 }) => {
+  const formSubmit = (event) => {
+    event.preventDefault()
+    setGrid(emptyGrid)
+  }
   return (
     <div className="navbar">
       <button
@@ -60,18 +65,24 @@ const NavBar = ({
           id="myRange"
         ></input>
         <p>Size</p>
-        <form>
+        <form onSubmit={formSubmit}>
           <input
             type="text"
             value={numRows}
             onChange={handleRowsChange}
             className="text-input"
+            style={{
+              width: 50,
+            }}
           ></input>
           <input
             type="text"
             value={numCols}
             onChange={handleColsChange}
             className="text-input"
+            style={{
+              width: 50,
+            }}
           ></input>
           <input type="submit" value="Submit"></input>
         </form>
