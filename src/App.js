@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react"
 import "./App.css"
 import produce from "immer"
 import NavBar from "./components/navbar/NavBar"
+import Controls from "./components/controls/Controls"
 import Grid from "./components/grid/Grid"
 
 const operations = [
@@ -16,9 +17,9 @@ const operations = [
 ]
 
 const App = () => {
-  const [speedVal, setSpeedVal] = useState(100)
-  const [numRows, setNumRows] = useState(10)
-  const [numCols, setNumCols] = useState(10)
+  const [speedVal, setSpeedVal] = useState(150)
+  const [numRows, setNumRows] = useState(20)
+  const [numCols, setNumCols] = useState(20)
   const [gridActive, setGridActive] = useState(false)
 
   const emptyGrid = () => {
@@ -69,8 +70,8 @@ const App = () => {
     setTimeout(animate, speedVal)
   }
 
-  const handleSpeedChange = (event) => {
-    setSpeedVal(event.target.value)
+  const handleSpeedChange = (event, value) => {
+    setSpeedVal(value)
   }
 
   const handleRowsChange = (event) => {
@@ -83,7 +84,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <NavBar
+      <NavBar />
+      <Controls
         toggleActive={toggleActive}
         gridActive={gridActive}
         runningRef={runningRef}
