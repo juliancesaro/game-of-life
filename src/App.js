@@ -21,13 +21,10 @@ const App = () => {
   const [numCols, setNumCols] = useState(10)
   const [gridActive, setGridActive] = useState(false)
 
-  console.log(numRows)
-  console.log(numCols)
-
   const emptyGrid = () => {
     const rows = []
     for (let i = 0; i < numRows; i++) {
-      rows.push(Array.from(Array(numCols), () => 0))
+      rows.push(Array.from(Array(parseInt(numCols)), () => 0))
     }
     return rows
   }

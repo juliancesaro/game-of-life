@@ -38,7 +38,9 @@ const NavBar = ({
           const rows = []
           for (let i = 0; i < numRows; i++) {
             rows.push(
-              Array.from(Array(numCols), () => Math.floor(Math.random() * 2))
+              Array.from(Array(parseInt(numCols)), () =>
+                Math.floor(Math.random() * 2)
+              )
             )
           }
           setGrid(rows)
@@ -67,7 +69,7 @@ const NavBar = ({
         <p>Size</p>
         <form onSubmit={formSubmit}>
           <input
-            type="text"
+            type="number"
             value={numRows}
             onChange={handleRowsChange}
             className="text-input"
@@ -76,7 +78,7 @@ const NavBar = ({
             }}
           ></input>
           <input
-            type="text"
+            type="number"
             value={numCols}
             onChange={handleColsChange}
             className="text-input"
