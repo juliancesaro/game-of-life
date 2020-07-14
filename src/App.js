@@ -26,11 +26,13 @@ const App = () => {
   const [gridActive, setGridActive] = useState(false)
 
   const emptyGrid = () => {
-    const rows = []
-    for (let i = 0; i < numRows; i++) {
-      rows.push(Array.from(Array(parseInt(numCols)), () => 0))
+    if (numCols <= 100 && numRows <= 100) {
+      const rows = []
+      for (let i = 0; i < numRows; i++) {
+        rows.push(Array.from(Array(parseInt(numCols)), () => 0))
+      }
+      return rows
     }
-    return rows
   }
 
   const [grid, setGrid] = useState(() => {
@@ -78,11 +80,15 @@ const App = () => {
   }
 
   const handleRowsChange = (event) => {
-    setNumRows(event.target.value)
+    if (event.target.value <= 100) {
+      setNumRows(event.target.value)
+    }
   }
 
   const handleColsChange = (event) => {
-    setNumCols(event.target.value)
+    if (event.target.value <= 100) {
+      setNumCols(event.target.value)
+    }
   }
 
   return (
