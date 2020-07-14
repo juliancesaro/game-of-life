@@ -1,11 +1,48 @@
+@media only screen and (min-width: 600px) {
+  .title {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    color: white;
+  }
+  .title-left {
+    margin-right: 10px;
+  }
+}
+@media only screen and (max-width: 599px) {
+  .title {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    color: white;
+  }
+  .title-left {
+    margin-bottom: 0;
+  }
+  .title-right {
+    margin-top: 0;
+  }
+}
 .navbar {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 30px;
 }
-.title {
+.links {
   font-family: "Poppins", sans-serif;
-  margin: 0;
+  width: 200px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
   color: white;
+  transition: 0.3s;
+}
+.activelink {
+  color: #66fcf1;
 }

@@ -1,9 +1,12 @@
 import React, { useState, useRef } from "react"
 import "./App.css"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import produce from "immer"
 import NavBar from "./components/navbar/NavBar"
 import Controls from "./components/controls/Controls"
 import Grid from "./components/grid/Grid"
+import Rules from "./components/about/Rules"
+import Fade from "react-reveal/Fade"
 
 const operations = [
   [0, 1],
@@ -84,28 +87,41 @@ const App = () => {
 
   return (
     <div className="App">
-      <NavBar />
-      <Controls
-        toggleActive={toggleActive}
-        gridActive={gridActive}
-        runningRef={runningRef}
-        animate={animate}
-        setGrid={setGrid}
-        emptyGrid={emptyGrid}
-        speedVal={speedVal}
-        handleSpeedChange={handleSpeedChange}
-        numRows={numRows}
-        handleRowsChange={handleRowsChange}
-        numCols={numCols}
-        handleColsChange={handleColsChange}
-      />
-      <Grid
-        grid={grid}
-        setGrid={setGrid}
-        numRows={numRows}
-        numCols={numCols}
-        isActive={gridActive}
-      />
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route path="/rules">
+            <Fade bottom distance="20px">
+              <Rules />
+            </Fade>
+          </Route>
+          <Route path="/">
+            <Fade bottom distance="20px">
+              <Controls
+                toggleActive={toggleActive}
+                gridActive={gridActive}
+                runningRef={runningRef}
+                animate={animate}
+                setGrid={setGrid}
+                emptyGrid={emptyGrid}
+                speedVal={speedVal}
+                handleSpeedChange={handleSpeedChange}
+                numRows={numRows}
+                handleRowsChange={handleRowsChange}
+                numCols={numCols}
+                handleColsChange={handleColsChange}
+              />
+              <Grid
+                grid={grid}
+                setGrid={setGrid}
+                numRows={numRows}
+                numCols={numCols}
+                isActive={gridActive}
+              />
+            </Fade>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   )
 }
