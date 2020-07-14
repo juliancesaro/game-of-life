@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/game-of-life/static/css/main.52f3bef8.chunk.css",
-    "main.js": "/game-of-life/static/js/main.4c739391.chunk.js",
-    "main.js.map": "/game-of-life/static/js/main.4c739391.chunk.js.map",
+    "main.css": "/game-of-life/static/css/main.3a2f4dc9.chunk.css",
+    "main.js": "/game-of-life/static/js/main.25ad4169.chunk.js",
+    "main.js.map": "/game-of-life/static/js/main.25ad4169.chunk.js.map",
     "runtime-main.js": "/game-of-life/static/js/runtime-main.1dafd470.js",
     "runtime-main.js.map": "/game-of-life/static/js/runtime-main.1dafd470.js.map",
-    "static/js/2.15c38b2b.chunk.js": "/game-of-life/static/js/2.15c38b2b.chunk.js",
-    "static/js/2.15c38b2b.chunk.js.map": "/game-of-life/static/js/2.15c38b2b.chunk.js.map",
+    "static/js/2.e68f2e8f.chunk.js": "/game-of-life/static/js/2.e68f2e8f.chunk.js",
+    "static/js/2.e68f2e8f.chunk.js.map": "/game-of-life/static/js/2.e68f2e8f.chunk.js.map",
     "index.html": "/game-of-life/index.html",
-    "precache-manifest.ac7105c3bc4c68136aff44bf5d1b17f0.js": "/game-of-life/precache-manifest.ac7105c3bc4c68136aff44bf5d1b17f0.js",
+    "precache-manifest.69eaf5612a27c53432fb411e0cc5f29c.js": "/game-of-life/precache-manifest.69eaf5612a27c53432fb411e0cc5f29c.js",
     "service-worker.js": "/game-of-life/service-worker.js",
-    "static/css/main.52f3bef8.chunk.css.map": "/game-of-life/static/css/main.52f3bef8.chunk.css.map",
-    "static/js/2.15c38b2b.chunk.js.LICENSE.txt": "/game-of-life/static/js/2.15c38b2b.chunk.js.LICENSE.txt"
+    "static/css/main.3a2f4dc9.chunk.css.map": "/game-of-life/static/css/main.3a2f4dc9.chunk.css.map",
+    "static/js/2.e68f2e8f.chunk.js.LICENSE.txt": "/game-of-life/static/js/2.e68f2e8f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1dafd470.js",
-    "static/js/2.15c38b2b.chunk.js",
-    "static/css/main.52f3bef8.chunk.css",
-    "static/js/main.4c739391.chunk.js"
+    "static/js/2.e68f2e8f.chunk.js",
+    "static/css/main.3a2f4dc9.chunk.css",
+    "static/js/main.25ad4169.chunk.js"
   ]
 }
