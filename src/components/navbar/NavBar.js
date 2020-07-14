@@ -19,12 +19,7 @@ const NavBar = () => {
           <NavLink exact className="link" activeClassName="activelink" to="/">
             Play
           </NavLink>
-          <NavLink
-            exact
-            className="link"
-            activeClassName="activelink"
-            to="/rules"
-          >
+          <NavLink className="link" activeClassName="activelink" to="/rules">
             Rules
           </NavLink>
         </div>

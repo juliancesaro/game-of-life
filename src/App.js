@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react"
 import "./App.css"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { HashRouter, Route, Switch } from "react-router-dom"
 import produce from "immer"
 import NavBar from "./components/navbar/NavBar"
 import Controls from "./components/controls/Controls"
@@ -87,7 +87,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Router>
+      <HashRouter basename="/">
         <NavBar />
         <Switch>
           <Route path="/rules">
@@ -121,7 +121,7 @@ const App = () => {
             </Fade>
           </Route>
         </Switch>
-      </Router>
+      </HashRouter>
     </div>
   )
 }
