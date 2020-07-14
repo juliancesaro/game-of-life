@@ -160,7 +160,7 @@ const Controls = ({
               }}
               variant="outlined"
               style={{
-                width: 100,
+                width: 80,
                 color: "white",
                 marginLeft: 10,
                 marginRight: 10,
@@ -176,9 +176,14 @@ const Controls = ({
                 shrink: true,
               }}
               variant="outlined"
-              style={{ width: 100, color: "white", marginRight: 10 }}
+              style={{ width: 80, color: "white", marginRight: 10 }}
             />
-            <Button type="submit" className="button" variant="contained">
+            <Button
+              type="submit"
+              className="button"
+              variant="contained"
+              style={{ width: 80, marginRight: 10 }}
+            >
               update
             </Button>
           </form>
