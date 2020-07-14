@@ -6,8 +6,8 @@ const Rules = () => {
     <div className="rules">
       <p>
         John Conway's Game of Life is a zero-player game in which cells are
-        either alive or dead. Each subsequent generation of cells evolve from
-        the previous generation, and each cell's life is determined by a set of
+        either alive or dead. Each generation of cells evolves from it's
+        previous generation, and each cell's life is determined by a set of
         rules.
       </p>
       <p>The rules are:</p>
