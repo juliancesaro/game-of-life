@@ -1,20 +1,20 @@
 import React from "react"
 import "./NavBar.css"
 import { NavLink } from "react-router-dom"
-import Fade from "react-reveal/Fade"
+import { Fade } from "react-awesome-reveal"
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
   return (
     <div className="navbar">
       <div className="title">
-        <Fade left distance="20px">
+        <Fade direction="left">
           <h1 className="title-left">John Conway's</h1>
         </Fade>{" "}
-        <Fade right distance="20px">
+        <Fade direction="right">
           <h1 className="title-right">Game of Life</h1>
         </Fade>
       </div>
-      <Fade bottom distance="20px">
+      <Fade direction="up">
         <div className="links">
           <NavLink exact className="link" activeClassName="activelink" to="/">
             Play

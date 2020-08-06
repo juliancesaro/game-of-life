@@ -1,13 +1,8 @@
 import React from "react"
 import "./Controls.css"
-import {
-  withStyles,
-  createMuiTheme,
-  ThemeProvider,
-} from "@material-ui/core/styles"
+import { withStyles, createMuiTheme } from "@material-ui/core/styles"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
-import Slider from "@material-ui/core/Slider"
 
 const GridTextInput = withStyles({
   root: {
@@ -37,47 +32,36 @@ const GridTextInput = withStyles({
   },
 })(TextField)
 
-const muiTheme = createMuiTheme({
-  overrides: {
-    MuiSlider: {
-      track: {
-        color: "white",
-      },
-      rail: {
-        color: "white",
-      },
-      mark: {
-        color: "black",
-      },
-      marked: {
-        color: "black",
-      },
-      markActive: {
-        backgroundColor: "black",
-      },
-    },
-  },
-})
-
-function valuetext(value) {
-  return `${value}°C`
+interface ControlProps {
+  toggleActive: () => void
+  gridActive: boolean
+  runningRef: { current: boolean }
+  animate: () => void
+  setGrid: (val: any) => void
+  emptyGrid: () => Array<Array<number>>
+  numRows: number
+  handleRowsChange: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
+  numCols: number
+  handleColsChange: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void
 }
 
-const Controls = ({
+const Controls: React.FC<ControlProps> = ({
   toggleActive,
   gridActive,
   runningRef,
   animate,
   setGrid,
   emptyGrid,
-  speedVal,
-  handleSpeedChange,
   numRows,
   handleRowsChange,
   numCols,
   handleColsChange,
 }) => {
-  const formSubmit = (event) => {
+  const formSubmit = (event: React.FormEvent<HTMLElement>) => {
     event.preventDefault()
     setGrid(emptyGrid)
   }
@@ -105,9 +89,7 @@ const Controls = ({
             const rows = []
             for (let i = 0; i < numRows; i++) {
               rows.push(
-                Array.from(Array(parseInt(numCols)), () =>
-                  Math.floor(Math.random() * 2)
-                )
+                Array.from(Array(numCols), () => Math.floor(Math.random() * 2))
               )
             }
             setGrid(rows)
@@ -128,24 +110,6 @@ const Controls = ({
         </Button>
       </div>
       <div className="input-fields">
-        <div className="speed-input">
-          <p>Speed</p>
-          <ThemeProvider theme={muiTheme}>
-            <Slider
-              className="slider"
-              value={speedVal}
-              onChange={handleSpeedChange}
-              getAriaValueText={valuetext}
-              aria-labelledby="discrete-slider"
-              valueLabelDisplay="auto"
-              step={50}
-              marks
-              min={50}
-              max={250}
-              style={{ width: 200, margin: 10 }}
-            />
-          </ThemeProvider>
-        </div>
         <div className="size-input">
           <p>Size</p>
           <form onSubmit={formSubmit}>

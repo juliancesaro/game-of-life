@@ -1,7 +1,7 @@
 import React from "react"
 import "./Rules.css"
 
-const Rules = () => {
+const Rules: React.FC = () => {
   return (
     <div className="rules">
       <p>

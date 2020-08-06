@@ -4,13 +4,20 @@ import useMediaQuery from "@material-ui/core/useMediaQuery"
 import produce from "immer"
 import Cell from "../cell/Cell"
 
-const Grid = ({ grid, setGrid, numRows, numCols, isActive }) => {
+type GridProps = {
+  grid: Array<Array<number>>
+  setGrid: (val: any) => void
+  numRows: number
+  numCols: number
+}
+
+const Grid: React.FC<GridProps> = ({ grid, setGrid, numRows, numCols }) => {
   const matches = useMediaQuery("(max-width:600px)")
 
-  const activateCell = (row, col) => {
+  const activateCell = (row: number, col: number) => {
     setGrid(
       produce(grid, (gridCopy) => {
-        gridCopy[row][col] = !gridCopy[row][col]
+        gridCopy[row][col] = grid[row][col] ? 0 : 1
       })
     )
   }
@@ -36,13 +43,12 @@ const Grid = ({ grid, setGrid, numRows, numCols, isActive }) => {
               }
         }
       >
-        {grid.map((rows, i) =>
-          rows.map((col, k) => (
+        {grid.map((rows: Array<number>, i: number) =>
+          rows.map((col: number, k: number) => (
             <Cell
               key={`${i}-${k}`}
               row={i}
               col={k}
-              numRows={numRows}
               numCols={numCols}
               isActive={grid[i][k]}
               activate={activateCell}

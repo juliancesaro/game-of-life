@@ -6,7 +6,7 @@ import NavBar from "./components/navbar/NavBar"
 import Controls from "./components/controls/Controls"
 import Grid from "./components/grid/Grid"
 import Rules from "./components/about/Rules"
-import Fade from "react-reveal/Fade"
+import { Fade } from "react-awesome-reveal"
 
 const operations = [
   [0, 1],
@@ -19,8 +19,7 @@ const operations = [
   [-1, 0],
 ]
 
-const App = () => {
-  const [speedVal, setSpeedVal] = useState(150)
+const App: React.FC = () => {
   const [numRows, setNumRows] = useState(20)
   const [numCols, setNumCols] = useState(20)
   const [gridActive, setGridActive] = useState(false)
@@ -29,9 +28,11 @@ const App = () => {
     if (numCols <= 100 && numRows <= 100) {
       const rows = []
       for (let i = 0; i < numRows; i++) {
-        rows.push(Array.from(Array(parseInt(numCols)), () => 0))
+        rows.push(Array.from(Array(numCols), () => 0))
       }
       return rows
+    } else {
+      return []
     }
   }
 
@@ -72,22 +73,23 @@ const App = () => {
         }
       })
     })
-    setTimeout(animate, speedVal)
+    setTimeout(animate, 100)
   }
 
-  const handleSpeedChange = (event, value) => {
-    setSpeedVal(value)
-  }
-
-  const handleRowsChange = (event) => {
-    if (event.target.value <= 100) {
-      setNumRows(event.target.value)
+  const handleRowsChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    console.log(event)
+    if (parseInt(event.currentTarget.value) <= 100) {
+      setNumRows(parseInt(event.currentTarget.value))
     }
   }
 
-  const handleColsChange = (event) => {
-    if (event.target.value <= 100) {
-      setNumCols(event.target.value)
+  const handleColsChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    if (parseInt(event.currentTarget.value) <= 100) {
+      setNumCols(parseInt(event.currentTarget.value))
     }
   }
 
@@ -97,12 +99,12 @@ const App = () => {
         <NavBar />
         <Switch>
           <Route path="/rules">
-            <Fade bottom distance="20px">
+            <Fade direction="up">
               <Rules />
             </Fade>
           </Route>
           <Route path="/">
-            <Fade bottom distance="20px">
+            <Fade direction="up">
               <Controls
                 toggleActive={toggleActive}
                 gridActive={gridActive}
@@ -110,8 +112,6 @@ const App = () => {
                 animate={animate}
                 setGrid={setGrid}
                 emptyGrid={emptyGrid}
-                speedVal={speedVal}
-                handleSpeedChange={handleSpeedChange}
                 numRows={numRows}
                 handleRowsChange={handleRowsChange}
                 numCols={numCols}
@@ -122,7 +122,6 @@ const App = () => {
                 setGrid={setGrid}
                 numRows={numRows}
                 numCols={numCols}
-                isActive={gridActive}
               />
             </Fade>
           </Route>
