@@ -1,6 +1,6 @@
 import React from "react"
 import "./Controls.css"
-import { withStyles, createMuiTheme } from "@material-ui/core/styles"
+import { withStyles } from "@material-ui/core/styles"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 
